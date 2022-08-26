@@ -196,7 +196,14 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         // Obtain video from URL
         if info.keys.contains(.mediaURL),
            let recordedVideoUrl = (info[.mediaURL] as? URL)?.absoluteURL {
+            let avPlayer = AVPlayer(url: recordedVideoUrl)
             
+            let avPlayerController = AVPlayerViewController()
+            avPlayerController.player = avPlayer
+            
+            present(avPlayerController, animated: true) {
+                avPlayerController.player?.play()
+            }
         }
     }
 }
