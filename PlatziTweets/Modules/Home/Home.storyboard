@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-1e-y0k">
-                                <rect key="frame" x="20" y="117" width="374" height="238"/>
+                                <rect key="frame" x="20" y="117" width="374" height="289"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n7T-Zg-iS3">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -96,13 +96,26 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-KV-I8t">
                                         <rect key="frame" x="0.0" y="140" width="374" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Abrir cámara"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Abrir cámara">
+                                            <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="openCameraAction" destination="bJy-GL-Jgl" eventType="touchUpInside" id="iRC-au-aex"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYY-hk-Znf">
+                                        <rect key="frame" x="0.0" y="191" width="374" height="31"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Ver Video">
+                                            <imageReference key="image" image="video.fill" catalog="system" renderingMode="original"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="openPreviewAction" destination="bJy-GL-Jgl" eventType="touchUpInside" id="fIf-bt-DbB"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36g-dy-Q4Y">
-                                        <rect key="frame" x="0.0" y="191" width="374" height="47"/>
+                                        <rect key="frame" x="0.0" y="242" width="374" height="47"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="Zi2-Lj-4PZ"/>
@@ -117,7 +130,7 @@
                                         </connections>
                                     </button>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E61-nL-o7Q">
-                                        <rect key="frame" x="0.0" y="238" width="374" height="200"/>
+                                        <rect key="frame" x="0.0" y="289" width="374" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="6Wh-v3-U2m"/>
                                         </constraints>
@@ -151,11 +164,12 @@
                     <connections>
                         <outlet property="postTextView" destination="n7T-Zg-iS3" id="PAq-5a-Vso"/>
                         <outlet property="previewImageView" destination="E61-nL-o7Q" id="EPn-OU-tqr"/>
+                        <outlet property="videoButton" destination="KYY-hk-Znf" id="WIU-F4-XvI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wb-J2-JWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908.6956521739132" y="444.64285714285711"/>
+            <point key="canvasLocation" x="1878" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1p7-8f-jKC">
@@ -179,6 +193,7 @@
     <resources>
         <image name="bottomImage" width="351.5" height="123"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
