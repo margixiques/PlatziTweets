@@ -65,6 +65,9 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="openVideoAction" destination="iN0-l3-epB" eventType="touchUpInside" id="foa-wT-BpJ"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjf-hJ-TkD">
                             <rect key="frame" x="0.0" y="367.5" width="43.5" height="13.5"/>

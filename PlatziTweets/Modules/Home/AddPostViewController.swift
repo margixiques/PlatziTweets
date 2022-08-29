@@ -73,8 +73,8 @@ class AddPostViewController: UIViewController {
         openCamera()
     }
     
-    // 1. Asegurarnos de que la foto exista
-    // 2. Comprimir la imagen y convertirla en Data
+    // 1. Asegurarnos de que el media exista
+    // 2. Comprimir la media y convertirla en Data
     private func getMediaData() -> Data? {
         switch mediaType {
         case .photo:
@@ -87,21 +87,21 @@ class AddPostViewController: UIViewController {
     }
     
     @IBAction func addPostAction() {
+        
         guard let mediaType = mediaType,
             let mediaData = getMediaData()
-        else { return }
-        
-        
-//        uploadVideoToFirebase()
+        else {
+            savePost(imageURL: nil, videoURL: nil)
+            return
+        }
         
         uploadMediaToFirebase(media: mediaType, data: mediaData)
-        
-        //openVideoCamera()
-        //uploadPhotoToFirebase()
+       
     }
     
     @IBAction func openPreviewAction() {
-        guard let currentVideoURL = currentVideoURL
+        guard
+            let currentVideoURL = currentVideoURL
         else {
             return
         }
@@ -205,12 +205,17 @@ class AddPostViewController: UIViewController {
                     //obtener la URL de descarga
                     folderReference.downloadURL { (url: URL?, error: Error?) in
                         let downloadUrl = url?.absoluteString ?? ""
-                        self.savePost(imageURL: downloadUrl, videoURL: nil)
+                            switch media {
+                            case .photo:
+                                self.savePost(imageURL: downloadUrl, videoURL: nil)
+                            case .video:
+                                self.savePost(imageURL: nil, videoURL: downloadUrl)
+
+                            }
+                        }
                     }
                 }
             }
-        }
-        
     }
     
     private func savePost(imageURL: String?, videoURL: String?) {
