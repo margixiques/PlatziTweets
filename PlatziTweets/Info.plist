@@ -4,7 +4,14 @@
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Usaremos el microfono para grabar el video del Tweet.</string>
-	<key>NSCameraUsageDescription</key>
+	
+    <key>NSCameraUsageDescription</key>
 	<string>Usaremos la cámara para publicar tu Tweet.</string>
+    
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Usaremos tu ubicación para el Tweet! :)</string>
+        
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Usaremos tu ubicación para el Tweet! :)</string>
 </dict>
 </plist>

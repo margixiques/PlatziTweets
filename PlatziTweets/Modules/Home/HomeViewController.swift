@@ -153,3 +153,17 @@ extension HomeViewController: UITableViewDataSource {
     }
     
 }
+// MARK: - Navigation
+extension HomeViewController {
+    
+    //Este metodo se llamará cuando hagamos transiciones entre pantallas (sólo con storyboards)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 1. Validar que el segue sea el esperado
+        
+        if segue.identifier == "showMap", let mapViewController = segue.destination as? MapViewController {
+            // Ya sabemos que si vamos a la pantalla del mapa
+            mapViewController.posts = dataSource.filter { $0.hasLocation }
+        }
+    }
+    
+}

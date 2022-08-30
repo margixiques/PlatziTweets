@@ -13,6 +13,7 @@ import FirebaseStorage
 import AVFoundation
 import AVKit
 import MobileCoreServices
+import CoreLocation
 
 
 enum MediaType {
@@ -122,8 +123,9 @@ class AddPostViewController: UIViewController {
     // MARK: - Properties
     private var imagePicker: UIImagePickerController?
     private var currentVideoURL: URL?
-    
-    var mediaType: MediaType?
+    private var mediaType: MediaType?
+    private var locationManager: CLLocationManager?
+    private var userLocation: CLLocation?
     
     
     
@@ -131,6 +133,20 @@ class AddPostViewController: UIViewController {
         super.viewDidLoad()
 
         videoButton.isHidden = true
+        requestLocation()
+    }
+    
+    private func requestLocation() {
+        //Validamos que el usuario tenga el GPS y disponible.
+        guard CLLocationManager.locationServicesEnabled() else {
+            return
+        }
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
     }
     
     private func openVideoCamera() {
@@ -219,7 +235,14 @@ class AddPostViewController: UIViewController {
     }
     
     private func savePost(imageURL: String?, videoURL: String?) {
+        // Crear un request de localización
+        var postlocation: Location?
         
+        if let userLocation = userLocation {
+            postlocation = Location(latitude: userLocation.coordinate.latitude,
+                                    longitude: userLocation.coordinate.longitude)
+        }
+            
         // 1. Crear request
         guard let post = postTextView.text, !post.isEmpty
         else {
@@ -233,7 +256,7 @@ class AddPostViewController: UIViewController {
         let request = PostRequest(text: postTextView.text,
                                   imageUrl: imageURL,
                                   videoUrl: videoURL,
-                                  location: nil)
+                                  location: postlocation)
         
         // 2. Indicar carga al usuario
         SVProgressHUD.show()
@@ -285,5 +308,17 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             videoButton.isHidden = false
             currentVideoURL = recordedVideoUrl
         }
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension AddPostViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let bestlocation = locations.last else {
+            return
+        }
+        
+        // Ya tenemos la ubicación del usuario
+        userLocation = bestlocation
     }
 }
