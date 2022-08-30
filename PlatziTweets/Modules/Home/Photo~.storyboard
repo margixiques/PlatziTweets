@@ -63,13 +63,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1904" y="269"/>
+            <point key="canvasLocation" x="1894.2028985507247" y="99.776785714285708"/>
         </scene>
-        <!--Inicio-->
+        <!--Item-->
+        <scene sceneID="s2e-fs-Pth">
+            <objects>
+                <viewController id="y2v-Qi-xwm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lp3-ge-WJY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Pn-Cd-yWT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2V9-Ru-Y2s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhr-JJ-QYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="1006"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="1p7-8f-jKC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EN3-BA-3ks" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Inicio" image="house.fill" catalog="system" id="1CU-t0-nC9"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="1CU-t0-nC9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Qfb-wn-f5O">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -92,13 +108,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nys-fw-Bdv">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" systemColor="systemGreenColor"/>
-                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="EN3-BA-3ks" kind="relationship" relationship="viewControllers" id="HGm-J5-QhR"/>
-                        <segue destination="pHx-ka-TbU" kind="relationship" relationship="viewControllers" id="qLy-y9-gi4"/>
-                        <segue destination="MXI-4y-5a6" kind="relationship" relationship="viewControllers" id="FdZ-6t-jbV"/>
+                        <segue destination="y2v-Qi-xwm" kind="relationship" relationship="viewControllers" id="qLy-y9-gi4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9A-k8-EkQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,7 +126,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhj-vO-rEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="256"/>
+            <point key="canvasLocation" x="2837.68115942029" y="-248.4375"/>
         </scene>
         <!--NewTweet-->
         <scene sceneID="rRl-12-uJT">
@@ -121,31 +134,10 @@
                 <viewControllerPlaceholder storyboardName="NewTweet" id="p9j-EK-6nH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b6-ru-hLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2575" y="289"/>
-        </scene>
-        <!--Photo-->
-        <scene sceneID="aKf-Ss-kpH">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Photo" id="pHx-ka-TbU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ciY-zV-ZQW"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ImD-pU-LHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="374" y="683"/>
-        </scene>
-        <!--Video-->
-        <scene sceneID="LzQ-cl-2Yx">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Video" id="MXI-4y-5a6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="u3l-HO-eQN"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="atD-Rq-Mqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-131" y="682"/>
+            <point key="canvasLocation" x="2838" y="516"/>
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

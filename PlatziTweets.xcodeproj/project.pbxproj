@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CB56A6C128BE5ED50022956E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6C028BE5ED50022956E /* MapViewController.swift */; };
+		CB56A6C328BEC1360022956E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB56A6C228BEC1360022956E /* Map.storyboard */; };
+		CB56A6C528BEC43F0022956E /* NewTweet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB56A6C428BEC43F0022956E /* NewTweet.storyboard */; };
+		CB56A6C728BEC5800022956E /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB56A6C628BEC5800022956E /* Photo.storyboard */; };
+		CB56A6C928BEC5FC0022956E /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB56A6C828BEC5FC0022956E /* Video.storyboard */; };
 		CB81D88D28A6A81700A3DD14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81D88C28A6A81700A3DD14 /* AppDelegate.swift */; };
 		CB81D89128A6A81700A3DD14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81D89028A6A81700A3DD14 /* ViewController.swift */; };
 		CB81D89628A6A81800A3DD14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB81D89528A6A81800A3DD14 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 		A474FC0600DC0F4B80566F9C /* Pods_PlatziTweets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlatziTweets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A6D8BE429712FE631B2948 /* Pods-PlatziTweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziTweets.release.xcconfig"; path = "Target Support Files/Pods-PlatziTweets/Pods-PlatziTweets.release.xcconfig"; sourceTree = "<group>"; };
 		CB56A6C028BE5ED50022956E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CB56A6C228BEC1360022956E /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		CB56A6C428BEC43F0022956E /* NewTweet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewTweet.storyboard; sourceTree = "<group>"; };
+		CB56A6C628BEC5800022956E /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
+		CB56A6C828BEC5FC0022956E /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
 		CB81D88928A6A81700A3DD14 /* PlatziTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB81D88C28A6A81700A3DD14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB81D89028A6A81700A3DD14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CB56A6CA28BEC70E0022956E /* NewTweet */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A6C428BEC43F0022956E /* NewTweet.storyboard */,
+				CBCD3BA028B42F0F00C79FB5 /* AddPostViewController.swift */,
+			);
+			path = NewTweet;
+			sourceTree = "<group>";
+		};
+		CB56A6CB28BEC7340022956E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A6C228BEC1360022956E /* Map.storyboard */,
+				CB56A6C028BE5ED50022956E /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		CB56A6CC28BEC78D0022956E /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A6C628BEC5800022956E /* Photo.storyboard */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		CB56A6CD28BEC7940022956E /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A6C828BEC5FC0022956E /* Video.storyboard */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		CB81D88028A6A81600A3DD14 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +191,8 @@
 		CBA5E3BF28A6EFC6002A6197 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CB56A6CD28BEC7940022956E /* Video */,
+				CB56A6CC28BEC78D0022956E /* Photo */,
 				CBCD3B7828AC2E6000C79FB5 /* Home */,
 				CBA5E3C028A6F013002A6197 /* Welcome */,
 			);
@@ -169,11 +213,11 @@
 		CBCD3B7828AC2E6000C79FB5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CBCD3B9D28AE9E6E00C79FB5 /* Cells */,
 				CBCD3B7928AC2E7200C79FB5 /* Home.storyboard */,
 				CBCD3B9928AE9CDA00C79FB5 /* HomeViewController.swift */,
-				CBCD3BA028B42F0F00C79FB5 /* AddPostViewController.swift */,
-				CB56A6C028BE5ED50022956E /* MapViewController.swift */,
+				CBCD3B9D28AE9E6E00C79FB5 /* Cells */,
+				CB56A6CB28BEC7340022956E /* Map */,
+				CB56A6CA28BEC70E0022956E /* NewTweet */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -295,9 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCD3B9F28AE9EB000C79FB5 /* TweetsTableViewCell.xib in Resources */,
+				CB56A6C328BEC1360022956E /* Map.storyboard in Resources */,
+				CB56A6C728BEC5800022956E /* Photo.storyboard in Resources */,
 				CB81D89928A6A81800A3DD14 /* LaunchScreen.storyboard in Resources */,
 				CB81D89628A6A81800A3DD14 /* Assets.xcassets in Resources */,
 				CBA5E3C228A6F04B002A6197 /* Welcome.storyboard in Resources */,
+				CB56A6C928BEC5FC0022956E /* Video.storyboard in Resources */,
+				CB56A6C528BEC43F0022956E /* NewTweet.storyboard in Resources */,
 				CBCD3B7A28AC2E7200C79FB5 /* Home.storyboard in Resources */,
 				CBCD3BA828B6834D00C79FB5 /* GoogleService-Info.plist in Resources */,
 			);

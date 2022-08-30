@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bJy-GL-Jgl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Post View Controller-->
+        <scene sceneID="Gpn-8Q-A0U">
+            <objects>
+                <viewController id="bJy-GL-Jgl" customClass="AddPostViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="icP-7F-JEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo Tweet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cs-eS-dUx">
+                                <rect key="frame" x="20" y="64" width="374" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQa-QO-AMf">
+                                <rect key="frame" x="329.5" y="64" width="64.5" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Volver">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismissAction" destination="bJy-GL-Jgl" eventType="touchUpInside" id="c7z-jr-bsQ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-1e-y0k">
+                                <rect key="frame" x="20" y="117" width="374" height="289"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n7T-Zg-iS3">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.31433671357615894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="m3N-Zz-SUW"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KI-KV-I8t">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Abrir cámara">
+                                            <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="openCameraAction" destination="bJy-GL-Jgl" eventType="touchUpInside" id="iRC-au-aex"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYY-hk-Znf">
+                                        <rect key="frame" x="0.0" y="191" width="374" height="31"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Ver Video">
+                                            <imageReference key="image" image="video.fill" catalog="system" renderingMode="original"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="openPreviewAction" destination="bJy-GL-Jgl" eventType="touchUpInside" id="fIf-bt-DbB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36g-dy-Q4Y">
+                                        <rect key="frame" x="0.0" y="242" width="374" height="47"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="Zi2-Lj-4PZ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Publicar">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addPostAction" destination="bJy-GL-Jgl" eventType="touchUpInside" id="nMU-Ot-thd"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E61-nL-o7Q">
+                                        <rect key="frame" x="0.0" y="289" width="374" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="6Wh-v3-U2m"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="bw5-wH-1l3">
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="1wu-6n-Rc3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nZ0-Jr-vuX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nZ0-Jr-vuX" firstAttribute="trailing" secondItem="3Cs-eS-dUx" secondAttribute="trailing" constant="20" id="6Mg-WI-lFo"/>
+                            <constraint firstItem="3Cs-eS-dUx" firstAttribute="top" secondItem="nZ0-Jr-vuX" secondAttribute="top" constant="20" id="Czu-JW-XuU"/>
+                            <constraint firstItem="1Ne-1e-y0k" firstAttribute="leading" secondItem="nZ0-Jr-vuX" secondAttribute="leading" constant="20" id="Lq2-ds-gU0"/>
+                            <constraint firstAttribute="trailing" secondItem="bw5-wH-1l3" secondAttribute="trailing" id="OLC-Lk-XYW"/>
+                            <constraint firstItem="NQa-QO-AMf" firstAttribute="top" secondItem="nZ0-Jr-vuX" secondAttribute="top" constant="20" id="TyD-Ii-fKg"/>
+                            <constraint firstItem="nZ0-Jr-vuX" firstAttribute="trailing" secondItem="1Ne-1e-y0k" secondAttribute="trailing" constant="20" id="cWA-e8-M8t"/>
+                            <constraint firstItem="nZ0-Jr-vuX" firstAttribute="trailing" secondItem="NQa-QO-AMf" secondAttribute="trailing" constant="20" id="d0u-Oq-IoQ"/>
+                            <constraint firstItem="NQa-QO-AMf" firstAttribute="centerY" secondItem="3Cs-eS-dUx" secondAttribute="centerY" id="fBp-R0-YDU"/>
+                            <constraint firstItem="3Cs-eS-dUx" firstAttribute="leading" secondItem="nZ0-Jr-vuX" secondAttribute="leading" constant="20" id="hdo-Kl-BLZ"/>
+                            <constraint firstAttribute="bottom" secondItem="bw5-wH-1l3" secondAttribute="bottom" id="jcQ-xi-oxF"/>
+                            <constraint firstItem="1Ne-1e-y0k" firstAttribute="top" secondItem="3Cs-eS-dUx" secondAttribute="bottom" constant="10" id="jdE-wA-8pC"/>
+                            <constraint firstItem="bw5-wH-1l3" firstAttribute="leading" secondItem="nZ0-Jr-vuX" secondAttribute="leading" id="lZF-Ad-2B0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="postTextView" destination="n7T-Zg-iS3" id="PAq-5a-Vso"/>
+                        <outlet property="previewImageView" destination="E61-nL-o7Q" id="EPn-OU-tqr"/>
+                        <outlet property="videoButton" destination="KYY-hk-Znf" id="WIU-F4-XvI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wb-J2-JWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837.68115942029" y="414.50892857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bottomImage" width="351.5" height="123"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
