@@ -20,5 +20,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87CAF535-57F5-4619-9205-03F770779D08"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlatziTweets/Modules/Photo/PhotoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "PhotoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "87CAF535-57F5-4619-9205-03F770779D08 - 543f52b62bd79c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlatziTweets.PhotoViewController.tableview.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "PlatziTweets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/iOS%20Course/Aprendiendo/PlatziTweets/PlatziTweets/Modules/Photo/PhotoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "87CAF535-57F5-4619-9205-03F770779D08 - 6140d49c3b5fa5d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlatziTweets.PhotoViewController.tableview.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "PlatziTweets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/iOS%20Course/Aprendiendo/PlatziTweets/PlatziTweets/Modules/Photo/PhotoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "87CAF535-57F5-4619-9205-03F770779D08 - e7f4a0811e99ccb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlatziTweets.PhotoViewController.tableview.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "PlatziTweets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/iOS%20Course/Aprendiendo/PlatziTweets/PlatziTweets/Modules/Photo/PhotoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "87CAF535-57F5-4619-9205-03F770779D08 - 200675ed74a17ead"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlatziTweets.PhotoViewController.tableview.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "PlatziTweets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/iOS%20Course/Aprendiendo/PlatziTweets/PlatziTweets/Modules/Photo/PhotoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "87CAF535-57F5-4619-9205-03F770779D08 - 6cbfbb8f35b323d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlatziTweets.PhotoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PlatziTweets.PhotoViewController"
+                  moduleName = "PlatziTweets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/iOS%20Course/Aprendiendo/PlatziTweets/PlatziTweets/Modules/Photo/PhotoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "87CAF535-57F5-4619-9205-03F770779D08 - ffee870810d947e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlatziTweets.PhotoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PlatziTweets.PhotoViewController&gt;"
+                  moduleName = "PlatziTweets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/margi/iOS%20Course/Aprendiendo/PlatziTweets/PlatziTweets/Modules/Photo/PhotoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

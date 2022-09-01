@@ -1,35 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y2v-Qi-xwm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Og-fr-BAP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Foto-->
-        <scene sceneID="s2e-fs-Pth">
+        <!--Tweets Fotos-->
+        <scene sceneID="1Gj-xD-7fW">
             <objects>
-                <viewController id="y2v-Qi-xwm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lp3-ge-WJY">
+                <viewController id="bXq-RU-Xf6" customClass="PhotoViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6f5-UQ-bEq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="8Pn-Cd-yWT"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="neg-8t-k8s">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XXO-2D-BS3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XXO-2D-BS3" firstAttribute="trailing" secondItem="neg-8t-k8s" secondAttribute="trailing" id="5vR-xc-NwI"/>
+                            <constraint firstItem="XXO-2D-BS3" firstAttribute="bottom" secondItem="neg-8t-k8s" secondAttribute="bottom" id="ARh-az-16p"/>
+                            <constraint firstItem="neg-8t-k8s" firstAttribute="leading" secondItem="XXO-2D-BS3" secondAttribute="leading" id="g99-nb-i7e"/>
+                            <constraint firstItem="neg-8t-k8s" firstAttribute="top" secondItem="XXO-2D-BS3" secondAttribute="top" id="iYM-7B-HOi"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Foto" image="photo.fill" catalog="system" id="2V9-Ru-Y2s"/>
+                    <tabBarItem key="tabBarItem" title="Foto" image="photo.fill" catalog="system" id="ts1-n3-9Pa"/>
+                    <navigationItem key="navigationItem" title="Tweets Fotos" id="TNa-Rt-PJc"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableview" destination="neg-8t-k8s" id="W7r-Em-7Dt"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hhr-JJ-QYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sD9-zU-F99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="1006"/>
+            <point key="canvasLocation" x="2526.0869565217395" y="956.91964285714278"/>
+        </scene>
+        <!--Foto-->
+        <scene sceneID="s4b-xV-2UV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Og-fr-BAP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Foto" id="i7F-WJ-qxE">
+                        <imageReference key="image" image="photo.fill" catalog="system"/>
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="G3p-kk-UBK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bXq-RU-Xf6" kind="relationship" relationship="rootViewController" id="KBP-tT-Z6p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYi-P1-nyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1615.9420289855075" y="956.91964285714278"/>
         </scene>
     </scenes>
     <resources>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

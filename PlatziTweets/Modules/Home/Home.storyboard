@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QWN-4F-V5i">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6V-mo-Pmp">
@@ -44,7 +44,7 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R6V-mo-Pmp" secondAttribute="trailing" constant="20" id="0Iy-zD-9G1"/>
                             <constraint firstItem="QWN-4F-V5i" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="9nA-mZ-CKC"/>
-                            <constraint firstAttribute="bottom" secondItem="QWN-4F-V5i" secondAttribute="bottom" constant="34" id="Tsw-QI-kJ1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QWN-4F-V5i" secondAttribute="bottom" id="Tsw-QI-kJ1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="R6V-mo-Pmp" secondAttribute="bottom" constant="60" id="ZG1-T2-gGE"/>
                             <constraint firstItem="QWN-4F-V5i" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="hL7-IU-dEi"/>
                             <constraint firstAttribute="trailing" secondItem="QWN-4F-V5i" secondAttribute="trailing" id="wzV-tE-PFF"/>
