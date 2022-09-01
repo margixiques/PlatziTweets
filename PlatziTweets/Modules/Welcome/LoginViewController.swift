@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordTextField.text = "12345"
+        checkStoragePassword()
         setupUI()
         checkStorageEmail()
     }
@@ -76,9 +76,9 @@ class LoginViewController: UIViewController {
 //                           style: .success).show()
         
         if emailswitch.isOn {
-            storage.set(email, forKey: emailKey)
+            storageEmail.set(email, forKey: emailKey)
         } else {
-            storage.removeObject(forKey: emailKey)
+            storageEmail.removeObject(forKey: emailKey)
         }
         
         // Crear request
@@ -149,17 +149,24 @@ class LoginViewController: UIViewController {
     }
     
     private func checkStorageEmail() {
-        if let storedEmail = storage.string(forKey: emailKey) {
+        if let storedEmail = storageEmail.string(forKey: emailKey) {
             emailTextField.text = storedEmail
             emailswitch.isOn = true
         } else {
             emailswitch.isOn = false
         }
     }
+    
+    private func checkStoragePassword() {
+        if let storedPassword = storagePassword.string(forKey: passwordKey) {
+            passwordTextField.text = storedPassword
+        }
+    }
 
 
     private let emailKey = UserDefaults.Keys.email.rawValue
-    private let storage = UserDefaults.standard
-
+    private let storageEmail = UserDefaults.standard
+    private let storagePassword = UserDefaults.standard
+    private let passwordKey = UserDefaults.Keys.password.rawValue
     
 }

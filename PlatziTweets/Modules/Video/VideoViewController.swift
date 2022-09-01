@@ -1,8 +1,8 @@
 //
-//  PhotoViewController.swift
+//  VideoViewController.swift
 //  PlatziTweets
 //
-//  Created by Margarita Xiques on 31/08/22.
+//  Created by Margarita Xiques on 1/09/22.
 //
 
 import UIKit
@@ -11,8 +11,8 @@ import SVProgressHUD
 import NotificationBannerSwift
 import AVKit
 
-class PhotoViewController: UIViewController {
-
+class VideoViewController: UIViewController {
+    
     // MARK: - IBOutlet
     @IBOutlet weak var tableview: UITableView!
     
@@ -31,7 +31,7 @@ class PhotoViewController: UIViewController {
         super.viewDidAppear(animated)
         
         getPosts()
-    
+        
     }
     
     private func setupUI() {
@@ -53,12 +53,12 @@ class PhotoViewController: UIViewController {
             
             switch response {
             case .success(let posts):
-                self.dataSource = posts.filter { $0.hasImage == true}
-//                for tweet in posts {
-//                    if tweet.hasImage == true {
-//                        self.dataSource.append(tweet)
-//                    }
-//                }
+                self.dataSource = posts.filter { $0.hasVideo == true}
+                //                for tweet in posts {
+                //                    if tweet.hasImage == true {
+                //                        self.dataSource.append(tweet)
+                //                    }
+                //                }
                 self.tableview.reloadData()
             case .error(let error):
                 NotificationBanner(title: "Error",
@@ -77,8 +77,8 @@ class PhotoViewController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension PhotoViewController: UITableViewDelegate {
-     
+extension VideoViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Guardar el correo del usuario y validar contra uno real
         return dataSource[indexPath.row].author.email == storage.string(forKey: emailKey)
@@ -87,7 +87,7 @@ extension PhotoViewController: UITableViewDelegate {
 
 
 // MARK: - UITableViewDataSource
-extension PhotoViewController: UITableViewDataSource {
+extension VideoViewController: UITableViewDataSource {
     // nùmero total de celdas
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
@@ -96,10 +96,21 @@ extension PhotoViewController: UITableViewDataSource {
     // Configurar celda deseada
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-    
+        
         if let cell = cell as? TweetsTableViewCell {
             // configurar la celda
             cell.setupCellWith(post: dataSource[indexPath.row])
+                        cell.needsToShowVideo = { url in
+                            // Aquí SI deberiamos abrir un viewcontroller
+                            let avPlayer = AVPlayer(url: url)
+            
+                            let avPlayerController = AVPlayerViewController()
+                            avPlayerController.player = avPlayer
+            
+                            self.present(avPlayerController, animated: true) {
+                                avPlayerController.player?.play()
+                            }
+                        }
         }
         
         return cell
@@ -109,5 +120,10 @@ extension PhotoViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+
+
+
+
 
 

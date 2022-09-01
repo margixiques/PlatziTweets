@@ -1,31 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Db-qH-kQ8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Qt-0a-9sy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Video-->
+        <!--Tweets Videos-->
         <scene sceneID="UWe-70-6ad">
             <objects>
-                <viewController id="4Db-qH-kQ8" sceneMemberID="viewController">
+                <viewController id="4Db-qH-kQ8" customClass="VideoViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zap-DC-0yd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2bI-3N-e3x">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Yor-Iy-yCw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yor-Iy-yCw" firstAttribute="trailing" secondItem="2bI-3N-e3x" secondAttribute="trailing" id="Np2-Qy-U04"/>
+                            <constraint firstItem="Yor-Iy-yCw" firstAttribute="bottom" secondItem="2bI-3N-e3x" secondAttribute="bottom" id="QOM-k6-OUB"/>
+                            <constraint firstItem="2bI-3N-e3x" firstAttribute="top" secondItem="Yor-Iy-yCw" secondAttribute="top" id="uZb-OJ-0eq"/>
+                            <constraint firstItem="2bI-3N-e3x" firstAttribute="leading" secondItem="Yor-Iy-yCw" secondAttribute="leading" id="ytu-f6-4XF"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Video" image="video.fill" catalog="system" id="VTc-KW-nnY"/>
+                    <navigationItem key="navigationItem" title="Tweets Videos" id="vG8-ke-JaR"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableview" destination="2bI-3N-e3x" id="4Dr-vt-kIM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQo-p7-YfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796" y="1051"/>
+            <point key="canvasLocation" x="113.04347826086958" y="1050.6696428571429"/>
+        </scene>
+        <!--Video-->
+        <scene sceneID="vt7-UF-agN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Qt-0a-9sy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Video" image="video.fill" catalog="system" id="VTc-KW-nnY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="FFx-mw-Ep0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Db-qH-kQ8" kind="relationship" relationship="rootViewController" id="6Ug-g6-NLZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUM-1M-yV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797.10144927536237" y="1050.6696428571429"/>
         </scene>
     </scenes>
     <resources>
         <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

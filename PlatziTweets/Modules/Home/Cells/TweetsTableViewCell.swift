@@ -31,9 +31,13 @@ class TweetsTableViewCell: UITableViewCell {
         needsToShowVideo?(videoUrl)
     }
     
+    
+    
     // MARK: - Properties
     private var videoUrl: URL?
     var needsToShowVideo: ((_ url: URL) -> Void)?
+    private var imageUrl: URL?
+    var needsToShowImage: ((_ url: URL) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
