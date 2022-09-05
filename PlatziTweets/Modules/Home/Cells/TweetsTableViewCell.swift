@@ -30,14 +30,13 @@ class TweetsTableViewCell: UITableViewCell {
         }
         needsToShowVideo?(videoUrl)
     }
-    
-    
-    
+        
     // MARK: - Properties
     private var videoUrl: URL?
     var needsToShowVideo: ((_ url: URL) -> Void)?
-    private var imageUrl: URL?
+    var imageUrl: URL?
     var needsToShowImage: ((_ url: URL) -> Void)?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,6 +65,16 @@ class TweetsTableViewCell: UITableViewCell {
         }
         
         videoUrl = URL(string: post.videoUrl)
+        imageUrl = URL(string: post.imageUrl)
+        
+    }
+    
+    func openImage() {
+        guard let imageUrl = imageUrl
+        else {
+            return
+        }
+        needsToShowImage?(imageUrl)
     }
 
 }

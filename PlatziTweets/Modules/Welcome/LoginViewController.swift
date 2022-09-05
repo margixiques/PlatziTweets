@@ -11,13 +11,46 @@ import Simple_Networking
 import SVProgressHUD
 import Alamofire
 
+extension UIColor {
+    static var customGreen: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor {(trait: UITraitCollection) -> UIColor in
+                if trait.userInterfaceStyle == .dark {
+                    // aqui estamos en dark mode
+                    return .white
+                } else {
+                    // aquí estamos en light mode
+                    return .systemGreen
+                }
+            }
+        } else {
+            // aquí es menor de iOS 13
+            return .systemGreen
+        }
+    }
+    
+    static var customTitleButtom: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor { (trait: UITraitCollection) -> UIColor in
+                if trait.userInterfaceStyle == .dark {
+                    return .black
+                } else {
+                    return .white
+                }
+            }
+        } else {
+            return .white
+        }
+    }
+}
+
 
 class LoginViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailswitch: UISwitch!
+    @IBOutlet weak var sesionswitch: UISwitch!
     
     // MARK: - IBActions
     
@@ -41,10 +74,17 @@ class LoginViewController: UIViewController {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
         
+        loginButton.backgroundColor =  UIColor.customGreen
+        loginButton.titleLabel?.textColor = UIColor.customTitleButtom
+        
+        
+        // Forzar a que la app no tenga Dark Mode
+        if #available(iOS 13.0, *) {
+           // overrideUserInterfaceStyle = .light
+        }
     }
     
     private func performLogin() {
-        
         
         guard
             let email = emailTextField.text,
@@ -54,10 +94,8 @@ class LoginViewController: UIViewController {
             NotificationBanner(title: "Error",
                                subtitle: "Debes ingresar un correo correcto",
                                style: .warning).show()
-            
             return
         }
-        
         
         guard
             let password = passwordTextField.text,
@@ -66,18 +104,19 @@ class LoginViewController: UIViewController {
             NotificationBanner(title: "Error",
                                subtitle: "Debes escribir una contraseña",
                                style: .warning).show()
-            
             return
             
         }
         
-//        NotificationBanner(title: "Inicio Exitoso",
-//                           subtitle: "Has iniciado con el correo \(email)",
-//                           style: .success).show()
+        //        NotificationBanner(title: "Inicio Exitoso",
+        //                           subtitle: "Has iniciado con el correo \(email)",
+        //                           style: .success).show()
         
-        if emailswitch.isOn {
+        if sesionswitch.isOn {
             storageEmail.set(email, forKey: emailKey)
+            storagePassword.set(password, forKey: passwordKey)
         } else {
+            storagePassword.removeObject(forKey: passwordKey)
             storageEmail.removeObject(forKey: emailKey)
         }
         
@@ -85,8 +124,6 @@ class LoginViewController: UIViewController {
         let request = LoginRequest(email: email , password: password)
         
         postLoginData(request)
-        
-       
     }
     
     private func isValidEmailAddress(emailAddressString: String) -> Bool {
@@ -111,7 +148,7 @@ class LoginViewController: UIViewController {
         
         return  returnValue
     }
-
+    
     private func postLoginData(_ request: LoginRequest) {
         // Iniciamos la carga
         SVProgressHUD.show()
@@ -145,28 +182,34 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.performSegue(withIdentifier: "showHome", sender: nil)
         }
-        
+        DispatchQueue.main.async {
+            <#code#>
+        }
     }
     
     private func checkStorageEmail() {
-        if let storedEmail = storageEmail.string(forKey: emailKey) {
+        if let storedEmail = storageEmail.string(forKey: emailKey){
             emailTextField.text = storedEmail
-            emailswitch.isOn = true
+            sesionswitch.isOn = true
         } else {
-            emailswitch.isOn = false
+            sesionswitch.isOn = false
         }
     }
     
     private func checkStoragePassword() {
         if let storedPassword = storagePassword.string(forKey: passwordKey) {
             passwordTextField.text = storedPassword
+            sesionswitch.isOn = true
+            
         }
     }
-
-
+    
+    
     private let emailKey = UserDefaults.Keys.email.rawValue
     private let storageEmail = UserDefaults.standard
     private let storagePassword = UserDefaults.standard
     private let passwordKey = UserDefaults.Keys.password.rawValue
     
 }
+
+

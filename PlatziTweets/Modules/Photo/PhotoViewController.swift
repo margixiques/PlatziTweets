@@ -12,7 +12,7 @@ import NotificationBannerSwift
 import AVKit
 
 class PhotoViewController: UIViewController {
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var tableview: UITableView!
     
@@ -24,14 +24,13 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         getPosts()
-    
+        
     }
     
     private func setupUI() {
@@ -54,11 +53,11 @@ class PhotoViewController: UIViewController {
             switch response {
             case .success(let posts):
                 self.dataSource = posts.filter { $0.hasImage == true}
-//                for tweet in posts {
-//                    if tweet.hasImage == true {
-//                        self.dataSource.append(tweet)
-//                    }
-//                }
+                //                for tweet in posts {
+                //                    if tweet.hasImage == true {
+                //                        self.dataSource.append(tweet)
+                //                    }
+                //                }
                 self.tableview.reloadData()
             case .error(let error):
                 NotificationBanner(title: "Error",
@@ -78,7 +77,7 @@ class PhotoViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension PhotoViewController: UITableViewDelegate {
-     
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Guardar el correo del usuario y validar contra uno real
         return dataSource[indexPath.row].author.email == storage.string(forKey: emailKey)
@@ -96,7 +95,7 @@ extension PhotoViewController: UITableViewDataSource {
     // Configurar celda deseada
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-    
+        
         if let cell = cell as? TweetsTableViewCell {
             // configurar la celda
             cell.setupCellWith(post: dataSource[indexPath.row])
@@ -106,6 +105,18 @@ extension PhotoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard
+            let photoDetailVC = UIStoryboard(name: "Photo", bundle: nil)
+                .instantiateViewController(
+                    withIdentifier: "PhotoDetailViewController") as?  PhotoDetailViewController
+        else { return }
+        
+        photoDetailVC.imageURL = dataSource[indexPath.row].imageUrl
+        
+        show(photoDetailVC, sender: nil)
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

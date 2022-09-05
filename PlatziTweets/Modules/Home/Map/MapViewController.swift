@@ -61,7 +61,7 @@ class MapViewController: UIViewController {
             return
         }
         
-        map?.camera = MKMapCamera(lookingAtCenter: lastPostLocation, fromDistance: 30, pitch: .zero, heading: heading)
+        map?.camera = MKMapCamera(lookingAtCenter: lastPostLocation, fromDistance: 50, pitch: .zero, heading: heading)
     }
 
 }
